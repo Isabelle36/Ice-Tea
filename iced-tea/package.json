@@ -1,0 +1,21 @@
+{
+  "name": "iced-tea",
+  "displayName": "Ice-Tea",
+  "description": "A vs code color theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Polar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Polar-color-theme.json"
+      }
+    ]
+  }
+}
