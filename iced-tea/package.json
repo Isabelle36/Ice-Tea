@@ -15,6 +15,11 @@
         "label": "Polar",
         "uiTheme": "vs-dark",
         "path": "./themes/Polar-color-theme.json"
+      },
+      {
+        "label": "Miku",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Miku-color-theme.json"
       }
     ]
   }
