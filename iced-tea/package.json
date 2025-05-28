@@ -12,14 +12,34 @@
   "contributes": {
     "themes": [
       {
-        "label": "Polar",
+        "label": "IceTea - Polar",
         "uiTheme": "vs-dark",
         "path": "./themes/Polar-color-theme.json"
       },
       {
-        "label": "Miku",
+        "label": "IceTea - Miku",
         "uiTheme": "vs-dark",
         "path": "./themes/Miku-color-theme.json"
+      },
+      {
+        "label": "IceTea - Evergarden",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Evergarden-color-theme.json"
+      },
+      {
+        "label": "IceTea - Naruto",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Naruto-color-theme.json"
+      },
+      {
+        "label": "IceTea - Hunter x Hunter",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Hunt-color-theme.json"
+      },
+      {
+        "label": "IceTea - Sakura My Love",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Sakura-color-theme.json"
       }
     ]
   }
