@@ -1,46 +1,83 @@
 {
   "name": "iced-tea",
   "displayName": "Ice-Tea",
-  "description": "A vs code color theme",
-  "version": "0.0.1",
+  "description": "A vs code color theme that provides anime themes for a unique coding experience.",
+  "version": "1.0.0",
+  "publisher": "AlfiNikhat",
+  "main": "extension/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+   "keywords": [
+    "Anime Theme",
+    "naruto theme",
+    "dragon ball theme",
+    "theme",
+    "cool theme",
+    "dark theme",
+    "VS Code",
+    "Dark",
+    "purple",
+    "green",
+    "tokyo night",
+    "polar",
+    "icy",
+    "cool",
+    "miku",
+    "violet evergarden",
+    "hunter x hunter",
+    "sakura",
+    "night",
+    "calm"
+  ],
   "engines": {
     "vscode": "^1.100.0"
   },
   "categories": [
     "Themes"
   ],
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/Isabelle36/Ice-Tea"
+  },
   "contributes": {
     "themes": [
       {
         "label": "IceTea - Polar",
         "uiTheme": "vs-dark",
-        "path": "./themes/Polar-color-theme.json"
+        "path": "./Tea/themes/Polar-color-theme.json"
       },
       {
         "label": "IceTea - Miku",
         "uiTheme": "vs-dark",
-        "path": "./themes/Miku-color-theme.json"
+        "path": "./Tea/themes/Miku-color-theme.json"
       },
       {
         "label": "IceTea - Evergarden",
         "uiTheme": "vs-dark",
-        "path": "./themes/Evergarden-color-theme.json"
+        "path": "./Tea/themes/Evergarden-color-theme.json"
       },
       {
         "label": "IceTea - Naruto",
         "uiTheme": "vs-dark",
-        "path": "./themes/Naruto-color-theme.json"
+        "path": "./Tea/themes/Naruto-color-theme.json"
       },
       {
         "label": "IceTea - Hunter x Hunter",
         "uiTheme": "vs-dark",
-        "path": "./themes/Hunt-color-theme.json"
+        "path": "./Tea/themes/Hunt-color-theme.json"
       },
       {
         "label": "IceTea - Sakura My Love",
         "uiTheme": "vs-dark",
-        "path": "./themes/Sakura-color-theme.json"
+        "path": "./Tea/themes/Sakura-color-theme.json"
+      },
+      {
+        "label": "IceTea - Gojo Freeze",
+        "uiTheme": "vs-dark",
+        "path": "./Tea/themes/Dragon_freeze-color-theme.json"
       }
     ]
   }
 }
+
