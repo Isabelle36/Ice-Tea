@@ -1,6 +1,13 @@
 "use client";
 import { CardStack } from "@/components/ui/card-stack";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/modern-ui/avatar";
+import { AvatarGroup } from "@/components/modern-ui/avatar-group";
 import React from "react";
+
 
 const Home = () => {
   const cards = [
@@ -53,6 +60,38 @@ const Home = () => {
       ),
     },
   ];
+
+  const testimonials = [
+    {
+      image: "https://via.placeholder.com/150",
+      text: "Using this component library has significantly speed up our development process. The quality and ease of integration are remarkable!",
+      name: "David Smith",
+      username: "@davidsmith",
+      social: "https://i.imgur.com/VRtqhGC.png",
+    },
+    {
+      image: "https://via.placeholder.com/150",
+      text: "I love  how intuitive and well-documented this component library is. It has significantly improved our UI consistency across projects.",
+      name: "James Wilson",
+      username: "@jameswilson",
+      social: "https://i.imgur.com/VRtqhGC.png",
+    },
+    {
+      image: "https://via.placeholder.com/150",
+      text: "Using this library has been a game-changer for our product development.",
+      name: "Michael Davis",
+      username: "@michaeldavis",
+      social: "https://i.imgur.com/VRtqhGC.png",
+    },
+    {
+      image: "https://via.placeholder.com/150",
+      text: "The components are highly responsive and work seamlessly across different devices and screen sizes.",
+      name: "Emily Chen",
+      username: "@emilychen",
+      social: "https://i.imgur.com/VRtqhGC.png",
+    },
+  ];
+
   return (
     <div className="relative flex bg-[#110921] flex-col h-screen overflow-x-hidden font-[family-name:var(--font-bricolage-grotesque)]">
       <div className="sm:w-[150px] sm:h-[150px] sm:mt-[25%] sm:ml-[-10%] md:w-[300px] md:h-[300px]  blur-[50px] bg-[#1a304bc5] absolute left-[-10%]  md:mt-[12%] rotate-45 z-0"></div>
@@ -70,87 +109,79 @@ const Home = () => {
           <span className="text-purple-400">Anime</span>-Inspired Themes That
           <br></br> Bring Your Editor to Life!
         </h2>
-        <button className="whiteshimmerbtn  mt-[2%]" type="button">
-          <style jsx>{`
-            .whiteshimmerbtn {
-              min-width: 130px;
-              height: 40px;
-              color: #121111;
-              padding: 1px 10px;
-              cursor: pointer;
-              transition: all 0.3s ease;
-              position: relative;
-              display: inline-block;
-              outline: none;
-              border-radius: 25px;
-              border: none;
-              background: linear-gradient(45deg, #ffffff, #e9ecef);
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-              z-index: 1;
-              overflow: hidden;
-            }
+        <div className="inline-flex mt-[2%] space-x-6">
+          <a target="_blank">
+            <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
+              <span className="text-white font-sm ">VsCode Extension</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide text-purple-400 group-hover:text-cyan-300 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300  my-auto lucide-zap-icon inline-flex lucide-zap"
+              >
+                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+              </svg>
+            </button>
+          </a>
 
-            .whiteshimmerbtn:before {
-              content: "";
-              position: absolute;
-              top: -50%;
-              left: -50%;
-              width: 200%;
-              height: 200%;
-              background: linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.3),
-                rgba(255, 255, 255, 0)
-              );
-              transform: rotate(45deg);
-              transition: all 0.5s ease;
-              z-index: -1;
-            }
-
-            .whiteshimmerbtn:hover:before {
-              top: -100%;
-              left: -100%;
-            }
-
-            .whiteshimmerbtn:after {
-              border-radius: 25px;
-              position: absolute;
-              content: "";
-              width: 0;
-              height: 100%;
-              top: 0;
-              z-index: -1;
-              box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-                7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-              transition: all 0.3s ease;
-              background: linear-gradient(45deg, #f8f9fa, #ced4da);
-              right: 0;
-            }
-
-            .whiteshimmerbtn:hover:after {
-              width: 100%;
-              left: 0;
-            }
-
-            .whiteshimmerbtn:active {
-              top: 2px;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-              background: linear-gradient(45deg, #ffffff, #e9ecef);
-            }
-
-            .whiteshimmerbtn span {
-              position: relative;
-              z-index: 2;
-            }
-          `}</style>
-
-          <span className="text-sm font-medium">
-            Download VS Code Extension
-          </span>
-        </button>
+          <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+            <span className="text-white font-sm">Leave a Review</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide text-white group-hover:translate-x-1 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <div className="mt-[2%] flex space-x-3">
+          <AvatarGroup limit={5}>
+            <Avatar>
+              <AvatarImage src="/Images/hotplate.jpg" alt="hot" />
+              <AvatarFallback>HOT</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage src="/Images/iddu.jpg" alt="iddu" />
+              <AvatarFallback>ID</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage src="/Images/inumaki.jpg" alt="inu" />
+              <AvatarFallback>IN</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage src="/Images/jinx.jpg" alt="jin" />
+              <AvatarFallback>JI</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage src="/Images/itadori.jpg" alt="ita" />
+              <AvatarFallback>IT</AvatarFallback>
+            </Avatar>
+          </AvatarGroup>
+          <div className="flex items-center ml-3">
+            <span className="text-md text-white/70">
+              Used by{" "}
+              <span className="font-bold text-white pl-1 pr-1"> 100+ </span>{" "}
+              developers
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
+          </div>
   );
 };
 
