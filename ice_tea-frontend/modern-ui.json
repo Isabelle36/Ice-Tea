@@ -7,9 +7,14 @@
   "framework": "next",
   "components": [
     {
-      "name": "rainbow-button",
+      "name": "avatar-group",
       "version": "latest",
-      "installedAt": "2025-06-02T15:49:45.842Z"
+      "installedAt": "2025-06-03T09:01:39.323Z"
+    },
+    {
+      "name": "avatar",
+      "version": "latest",
+      "installedAt": "2025-06-03T09:02:15.846Z"
     }
   ],
   "aliases": {
