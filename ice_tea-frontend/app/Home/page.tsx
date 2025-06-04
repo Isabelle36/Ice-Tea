@@ -107,17 +107,19 @@ const Home = () => {
           <CardStack items={cards} />
         </div>
       </div>
-      <div className="z-10 sm:ml-[10%] sm:mt-[-135%] md:mt-[-26%] lg:mt-[-10%] md:ml-[5%] lg:ml-[7%] space-y-2">
-        <h1 className="sm:text-4xl md:text-5xl lg:text-7xl text-white">
+      <div className="z-10 sm:ml-[12%] sm:mt-[-135%] md:mt-[-26%] lg:mt-[-10%] md:ml-[5%] lg:ml-[7%] space-y-2">
+        
+        <h1 className="sm:text-5xl md:text-5xl lg:text-7xl text-white">
           Code in Style
         </h1>
-        <h2 className="sm:text-xl md:text-xl lg:text-3xl text-white/80 ">
-          <span className="text-purple-400">Anime</span>-Inspired Themes That
+        <h2 className="sm:text-xl  md:text-xl lg:text-3xl text-white/80 ">
+          <span className="text-purple-400 ">Anime</span>-Inspired Themes That
           <br></br> Bring Your Editor to Life!
         </h2>
-        <div className="inline-flex mt-[2%] space-x-6">
+
+        <div className="sm:flex-row sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
           <a target="_blank">
-            <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
+            <button className="group sm:p-2 sm:pl-3 sm:pr-3 md:p-1 md:pl-1.5 md:pr-1  lg:p-1.5 lg:pl-3 lg:pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
               <span className="text-white font-sm ">VsCode Extension</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +138,7 @@ const Home = () => {
             </button>
           </a>
 
-          <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+          <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
             <span className="text-white font-sm">Leave a Review</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -148,14 +150,15 @@ const Home = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="lucide text-white group-hover:translate-x-1 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
+              className="lucide sm:translate-x-4 md:translate-x-0
+               text-white md:group-hover:translate-x-1 sm:group-hover:translate-x-5 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
             >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
           </button>
         </div>
-        <div className="mt-[2%] flex space-x-3">
+        <div className="mt-[16%] sm:ml-[-10%] md:ml-0 md:mt-[2%] flex space-x-3">
           <AvatarGroup limit={5}>
             <Avatar>
               <AvatarImage src="/Images/hotplate.jpg" alt="hot" />
@@ -164,6 +167,7 @@ const Home = () => {
             <Avatar>
               <AvatarImage src="/Images/iddu.jpg" alt="iddu" />
               <AvatarFallback>ID</AvatarFallback>
+              
             </Avatar>
             <Avatar>
               <AvatarImage src="/Images/inumaki.jpg" alt="inu" />
@@ -178,8 +182,8 @@ const Home = () => {
               <AvatarFallback>IT</AvatarFallback>
             </Avatar>
           </AvatarGroup>
-          <div className="flex items-center ml-3">
-            <span className="text-md text-white/70">
+          <div className="flex items-center sm:ml-1.5 md:ml-3">
+            <span className="sm:text-[15px] md:text-[16px] text-white/70">
               Used by
               <span className="font-bold text-white pl-1 pr-1"> 100+ </span>
               developers
@@ -187,26 +191,29 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-white flex justify-center mt-[20%] text-5xl font-bold">What the <span className="ml-1 mr-2 text-cyan-300">Otaku Coders</span> Are Raving About Us</h2>
-      <span className="text-3xl flex text-white mt-3 justify-center">Themes With <span className="ml-1 mr-1 text-purple-400">Vibes</span></span>
-      <div className="relative z-10 mt-40 mb-44">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[400px] bg-gradient-to-r from-[#110921] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[400px] bg-gradient-to-r from-[#110921] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[400px] bg-gradient-to-r from-[#110921] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[400px] bg-gradient-to-l from-[#110921] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[400px] bg-gradient-to-l from-[#110921] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[400px] bg-gradient-to-l from-[#110921] to-transparent z-20" />
-        <Marquee pauseOnHover={true} gradient={false} loop={0} speed={80} autoFill={true}>
+      {/* Testimonials Section */}
+      <h2 className="text-white font-bold text-center px-2 sm:mt-80 md:mt-[321px] text-2xl sm:text-3xl md:text-4xl">
+        <span>
+          What the <span className="text-cyan-300">Otaku Coders</span>
+          <span className="block sm:inline"> Are Raving About Us</span>
+        </span>
+      </h2>
+      <span className="sm:text-sm md:text-2xl flex text-white mt-3 justify-center text-center px-2">Themes With <span className="ml-1 mr-1 text-purple-400">Vibes</span></span>
+      <div className="relative z-10 mt-16 mb-24 sm:mt-24 sm:mb-32">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[100px] sm:w-[200px] md:w-[300px] bg-gradient-to-r from-[#110921] to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-[100px] sm:w-[200px] md:w-[300px] bg-gradient-to-l from-[#110921] to-transparent z-20" />
+        <Marquee pauseOnHover={true} gradient={false} loop={0} speed={60} autoFill={true} className="w-full">
           {[...testimonials, ...testimonials].map((testimonial, idx) => (
-            <div key={idx} className="mx-4 w-[320px]">
+            <div key={idx} className="mx-2 sm:mx-4 w-[260px] sm:w-[320px]">
               <TestimonialCard {...testimonial} />
             </div>
           ))}
         </Marquee>
       </div>
-      <div className="flex mb-40 justify-center space-x-4 gap-4 mt-8">
+      {/* Social Buttons Section */}
+        <div className="sm:flex-row mb-40 sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
         <Link target="_blank" href="https://x.com/iceteaThemes">
-        <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+        <button className="group ml-[10%] md:ml-0 p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
           <span className="text-white font-sm">Follow us on Twitter</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +233,7 @@ const Home = () => {
         </button>
         </Link> 
         <Link target="_blank" href="https://github.com/Isabelle36/Ice-Tea">
-          <button className="group p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
+          <button className="group ml-[14%] md:ml-0  p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
             <span className="text-white font-sm ">Star us on Github</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +252,7 @@ const Home = () => {
           </button>
         </Link>
       </div>
-      <FooterThird ></FooterThird>
+      <FooterThird />
     </div>
   );
 };
