@@ -104,3 +104,27 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
+/* Update marquee animation for seamless infinite scrolling */
+/* @keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+
+.group:hover .marquee {
+  animation-play-state: paused;
+}
+
+.marquee {
+  animation: marquee var(--duration) linear infinite;
+} */
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
