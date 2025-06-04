@@ -29,7 +29,7 @@ export function AvatarGroup({
         </div>
       ))}
       {excess > 0 && (
-        <div className="relative flex h-11 w-11 flex-row gap-0.5 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium ">
+        <div className="relative flex sm:h-3 sm:w-3 md:h-11 md:w-11 flex-row gap-0.5 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium ">
           <Plus className="h-3 w-3" />
           <span>{excess}</span>
         </div>
