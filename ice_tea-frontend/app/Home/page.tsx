@@ -12,6 +12,7 @@ import { TestimonialCard } from "@/components/ui/testimonial-card";
 import FooterThird from "@/components/serenity-ui/Footer";
 import Link from "next/link";
 
+
 const Home = () => {
   const cards = [
     {
@@ -67,12 +68,12 @@ const Home = () => {
   const testimonials = [
     {
       author: {
-        name: "raginghotplate",
+        name: "viraj ved",
         handle: "",
         avatar:
         "/Images/hotplate.jpg"
       },
-      text: "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
+      text: "I personally like Miku, Gives a retro vibes and evergarden feels more earthy cozy & homey Not much heavy on eyes",
       href: "",
     },
     {
@@ -82,7 +83,7 @@ const Home = () => {
         avatar:
         "/Images/iddu.jpg"
       },
-      text: "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
+      text: "The Gojo freeze, Miku and Polar i really liked these themes the rests are just not for me",
       href: "",
     },
     {
@@ -92,7 +93,37 @@ const Home = () => {
         avatar:
         "/Images/inumaki.jpg"
       },
-      text: "Baby Gurll integration is flawless. We've reduced our development time by 60% since implementing this solution.",
+      text: "The Naruto theme, i was founding it but it was just not the same but yours one is just exactly what i imagined it to be",
+      href: "",
+    },
+    {
+      author: {
+        name: "Arya",
+        handle: "",
+        avatar:
+        "/Images/pinkGirl.jpg"
+      },
+      text: "The sakura one is calm and it reminds me of spring and also dim not so bright which i like ",
+      href: "",
+    },
+    {
+      author: {
+        name: "Sakshi",
+        handle: "",
+        avatar:
+        "/Images/standing.jpg"
+      },
+      text: "I really like the vibes the themes give especially the miku one it's my favourite ,its kind of like cyberpunk",
+      href: "",
+    },
+    {
+      author: {
+        name: "Sofia",
+        handle: "",
+        avatar:
+        "/Images/staring.jpg"
+      },
+      text: "Evergarden just hits home it gives that feeling which makes one feel at ease and code",
       href: "",
     },
     
@@ -118,7 +149,7 @@ const Home = () => {
         </h2>
 
         <div className="sm:flex-row sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
-          <a target="_blank">
+          <Link href="https://github.com/isabelle36" target="_blank">
             <button className="group sm:p-2 sm:pl-3 sm:pr-3 md:p-1 md:pl-1.5 md:pr-1  lg:p-1.5 lg:pl-3 lg:pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
               <span className="text-white font-sm ">VsCode Extension</span>
               <svg
@@ -136,8 +167,9 @@ const Home = () => {
                 <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
               </svg>
             </button>
-          </a>
+          </Link>
 
+          <Link href="/review">
           <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
             <span className="text-white font-sm">Leave a Review</span>
             <svg
@@ -157,6 +189,7 @@ const Home = () => {
               <path d="m12 5 7 7-7 7" />
             </svg>
           </button>
+          </Link>
         </div>
         <div className="mt-[16%] sm:ml-[-10%] md:ml-0 md:mt-[2%] flex space-x-3">
           <AvatarGroup limit={5}>
