@@ -11,7 +11,7 @@ import React from "react";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import FooterThird from "@/components/serenity-ui/Footer";
 import Link from "next/link";
-
+import Image from "next/image";
 
 const Home = () => {
   const cards = [
@@ -20,11 +20,14 @@ const Home = () => {
       name: "",
       designation: "",
       content: (
-        <img
-          src="Images/Sakura.png"
+        <Image
+          src="/Images/Sakura.png"
           alt="saku"
+          width={584}
+          height={386}
           className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md"
-        ></img>
+          priority
+        />
       ),
     },
     {
@@ -32,11 +35,14 @@ const Home = () => {
       name: "",
       designation: "",
       content: (
-        <img
-          src="Images/Miku.png"
+        <Image
+          src="/Images/Miku.png"
           alt="miku"
-          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md "
-        ></img>
+          width={584}
+          height={386}
+          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md"
+          priority
+        />
       ),
     },
     {
@@ -44,11 +50,14 @@ const Home = () => {
       name: "",
       designation: "",
       content: (
-        <img
-          src="Images/Gojo Freeze.png"
+        <Image
+          src="/Images/Gojo Freeze.png"
           alt="gojo"
-          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md "
-        ></img>
+          width={584}
+          height={386}
+          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md"
+          priority
+        />
       ),
     },
     {
@@ -56,11 +65,14 @@ const Home = () => {
       name: "",
       designation: "",
       content: (
-        <img
-          src="Images/Polar.png"
+        <Image
+          src="/Images/Polar.png"
           alt="polar"
-          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md "
-        ></img>
+          width={584}
+          height={386}
+          className="sm:h-[195px] sm:w-[333px] md:h-[196px] md:w-[334px] lg:h-[386px] lg:w-[584px] rounded-md"
+          priority
+        />
       ),
     },
   ];
