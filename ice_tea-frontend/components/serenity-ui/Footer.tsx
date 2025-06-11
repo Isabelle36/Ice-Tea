@@ -1,15 +1,7 @@
 import React from "react";
-import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Github, BracesIcon, Mail } from "lucide-react";
+import { Twitter, Linkedin, Github, Mail } from "lucide-react";
 
 // Chnage this with your own data
-const defaultNavigationLinks = [
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-];
-
 const defaultSocialLinks = [
   { href: "https://x.com/iceteaThemes", icon: <Twitter size={24} />, hoverColor: "text-white" },
   { href: "https://www.linkedin.com/in/alfi-n-56985a30a/", icon: <Linkedin size={24} />, hoverColor: "text-white" },
@@ -19,7 +11,6 @@ const defaultSocialLinks = [
 
 const FooterThird = ({
   brandName = "IceTea",
-  navigationLinks = defaultNavigationLinks,
   socialLinks = defaultSocialLinks,
 }) => {
   return (

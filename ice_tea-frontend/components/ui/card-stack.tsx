@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
-let interval: any;
+let interval: unknown;
 
 type Card = {
   id: number;
@@ -27,7 +27,7 @@ export const CardStack = ({
   useEffect(() => {
     startFlipping();
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval as unknown as NodeJS.Timeout);
   }, []);
   const startFlipping = () => {
     interval = setInterval(() => {
