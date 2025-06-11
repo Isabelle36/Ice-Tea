@@ -11,7 +11,7 @@ import { TestimonialCard } from "@/components/ui/testimonial-card";
 import FooterThird from "@/components/serenity-ui/Footer";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef,useState,useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Lenis from "lenis";
 
@@ -136,28 +136,24 @@ const Home = () => {
     },
   ];
 
-   const [lenisRef, setLenis] = useState<Lenis | null>(null);
+  const [lenisRef, setLenis] = useState<Lenis | null>(null);
   const [rafState, setRaf] = useState<number | null>(null);
 
   useEffect(() => {
     const scroller = new Lenis();
-    let rf:number;
-
-    function raf(time : DOMHighResTimeStamp) {
+    const rf = requestAnimationFrame(raf);
+    function raf(time: DOMHighResTimeStamp) {
       scroller.raf(time);
       requestAnimationFrame(raf);
     }
 
-    rf = requestAnimationFrame(raf);
     setRaf(rf);
     setLenis(scroller);
 
     return () => {
-      if (lenisRef && rafState!=null) {
-        cancelAnimationFrame(rafState);
-        lenisRef.destroy();
-      }
-    };
+    cancelAnimationFrame(rf);
+    scroller.destroy();
+  };
   }, []);
 
   const fadeSectionRef = useRef(null);
