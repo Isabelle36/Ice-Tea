@@ -7,10 +7,12 @@ import {
 } from "@/components/modern-ui/avatar";
 import Marquee from "react-fast-marquee";
 import { AvatarGroup } from "@/components/modern-ui/avatar-group";
-import React from "react";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import FooterThird from "@/components/serenity-ui/Footer";
 import Link from "next/link";
+
+import Lenis from "lenis";
+import { useEffect,useState } from "react";
 import Image from "next/image";
 
 const Home = () => {
@@ -82,8 +84,7 @@ const Home = () => {
       author: {
         name: "viraj ved",
         handle: "",
-        avatar:
-        "/Images/hotplate.jpg"
+        avatar: "/Images/hotplate.jpg",
       },
       text: "I personally like Miku, Gives a retro vibes and evergarden feels more earthy cozy & homey Not much heavy on eyes",
       href: "",
@@ -92,8 +93,7 @@ const Home = () => {
       author: {
         name: "Iddu",
         handle: "",
-        avatar:
-        "/Images/iddu.jpg"
+        avatar: "/Images/iddu.jpg",
       },
       text: "The Gojo freeze, Miku and Polar i really liked these themes the rests are just not for me",
       href: "",
@@ -102,8 +102,7 @@ const Home = () => {
       author: {
         name: "karan",
         handle: "",
-        avatar:
-        "/Images/inumaki.jpg"
+        avatar: "/Images/inumaki.jpg",
       },
       text: "The Naruto theme, i was founding it but it was just not the same but yours one is just exactly what i imagined it to be",
       href: "",
@@ -112,8 +111,7 @@ const Home = () => {
       author: {
         name: "Arya",
         handle: "",
-        avatar:
-        "/Images/pinkGirl.jpg"
+        avatar: "/Images/pinkGirl.jpg",
       },
       text: "The sakura one is calm and it reminds me of spring and also dim not so bright which i like ",
       href: "",
@@ -122,8 +120,7 @@ const Home = () => {
       author: {
         name: "Sakshi",
         handle: "",
-        avatar:
-        "/Images/standing.jpg"
+        avatar: "/Images/standing.jpg",
       },
       text: "I really like the vibes the themes give especially the miku one it's my favourite ,its kind of like cyberpunk",
       href: "",
@@ -132,19 +129,40 @@ const Home = () => {
       author: {
         name: "Sofia",
         handle: "",
-        avatar:
-        "/Images/staring.jpg"
+        avatar: "/Images/staring.jpg",
       },
       text: "Evergarden just hits home it gives that feeling which makes one feel at ease and code",
       href: "",
     },
-    
   ];
 
-  
+  const [lenisRef, setLenis] = useState<Lenis | null>(null);
+  const [rafState, setRaf] = useState<number | null>(null);
+
+  useEffect(() => {
+    const scroller = new Lenis();
+    let rf:number;
+
+    function raf(time : DOMHighResTimeStamp) {
+      scroller.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    rf = requestAnimationFrame(raf);
+    setRaf(rf);
+    setLenis(scroller);
+
+    return () => {
+      if (lenisRef && rafState!=null) {
+        cancelAnimationFrame(rafState);
+        lenisRef.destroy();
+      }
+    };
+  }, []);
+
 
   return (
-    <div className="relative flex bg-[#110921] flex-col h-screen overflow-x-hidden font-[family-name:var(--font-bricolage-grotesque)]">
+    <div className="relative flex bg-[#110921] flex-col min-h-screen overflow-x-hidden font-[family-name:var(--font-bricolage-grotesque)]">
       <div className="sm:w-[150px] sm:h-[150px] sm:mt-[25%] sm:ml-[-10%] md:w-[300px] md:h-[300px]  blur-[50px] bg-[#1a304bc5] absolute left-[-10%]  md:mt-[12%] rotate-45 z-0"></div>
       <div className="sm:w-[260px] sm:h-[260px]  md:w-[200px] md:h-[200px] sm:mt-[130%] md:mt-[109%] lg:mt-[39%]  blur-[50px]  bg-[#2D0A44] absolute sm:right-[-42%] md:right-[-7%]  rounded-full rotate-[-30deg] z-0"></div>
       <div className="relative sm:flex sm:justify-center">
@@ -153,8 +171,10 @@ const Home = () => {
         </div>
       </div>
       <div className="z-10 sm:ml-[12%] sm:mt-[-135%] md:mt-[-26%] lg:mt-[-10%] md:ml-[5%] lg:ml-[7%] space-y-2">
-        
-        <h1 className="sm:text-5xl md:text-5xl lg:text-7xl text-white">
+        <h1
+          data-trig="fade-in"
+          className="  sm:text-5xl md:text-5xl lg:text-7xl text-white"
+        >
           Code in Style
         </h1>
         <h2 className="sm:text-xl  md:text-xl lg:text-3xl text-white/80 ">
@@ -184,25 +204,25 @@ const Home = () => {
           </Link>
 
           <Link href="/review">
-          <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
-            <span className="text-white font-sm">Leave a Review</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide sm:translate-x-4 md:translate-x-0
+            <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+              <span className="text-white font-sm">Leave a Review</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide sm:translate-x-4 md:translate-x-0
                text-white md:group-hover:translate-x-1 sm:group-hover:translate-x-5 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </button>
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
           </Link>
         </div>
         <div className="mt-[16%] sm:ml-[-10%] md:ml-0 md:mt-[2%] flex space-x-3">
@@ -214,7 +234,6 @@ const Home = () => {
             <Avatar>
               <AvatarImage src="/Images/iddu.jpg" alt="iddu" />
               <AvatarFallback>ID</AvatarFallback>
-              
             </Avatar>
             <Avatar>
               <AvatarImage src="/Images/inumaki.jpg" alt="inu" />
@@ -245,11 +264,20 @@ const Home = () => {
           <span className="block sm:inline"> Are Raving About Us</span>
         </span>
       </h2>
-      <span className="sm:text-sm md:text-2xl flex text-white mt-3 justify-center text-center px-2">Themes With <span className="ml-1 mr-1 text-purple-400">Vibes</span></span>
+      <span className="sm:text-sm md:text-2xl flex text-white mt-3 justify-center text-center px-2">
+        Themes With <span className="ml-1 mr-1 text-purple-400">Vibes</span>
+      </span>
       <div className="relative z-10 mt-16 mb-24 sm:mt-24 sm:mb-32">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-[100px] sm:w-[200px] md:w-[300px] bg-gradient-to-r from-[#110921] to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-[100px] sm:w-[200px] md:w-[300px] bg-gradient-to-l from-[#110921] to-transparent z-20" />
-        <Marquee pauseOnHover={true} gradient={false} loop={0} speed={60} autoFill={true} className="w-full">
+        <Marquee
+          pauseOnHover={true}
+          gradient={false}
+          loop={0}
+          speed={60}
+          autoFill={true}
+          className="w-full"
+        >
           {[...testimonials, ...testimonials].map((testimonial, idx) => (
             <div key={idx} className="mx-2 sm:mx-4 w-[260px] sm:w-[320px]">
               <TestimonialCard {...testimonial} />
@@ -258,27 +286,27 @@ const Home = () => {
         </Marquee>
       </div>
       {/* Social Buttons Section */}
-        <div className="sm:flex-row mb-40 sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
+      <div className="sm:flex-row mb-40 sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
         <Link target="_blank" href="https://x.com/iceteaThemes">
-        <button className="group ml-[10%] md:ml-0 p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
-          <span className="text-white font-sm">Follow us on Twitter</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide text-white group-hover:translate-x-1 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
-          >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </button>
-        </Link> 
+          <button className="group ml-[10%] md:ml-0 p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+            <span className="text-white font-sm">Follow us on Twitter</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide text-white group-hover:translate-x-1 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </Link>
         <Link target="_blank" href="https://github.com/Isabelle36/Ice-Tea">
           <button className="group ml-[14%] md:ml-0  p-1.5 pl-3 pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
             <span className="text-white font-sm ">Star us on Github</span>
