@@ -34,6 +34,7 @@ export default function RootLayout({
       <head>
        <link rel="icon" href="/Images/icetea_logo.jpg" sizes="any" />
       </head>
+     
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
       >
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights/>
       </body>
+     
     </html>
   );
 }

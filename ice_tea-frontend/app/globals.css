@@ -112,24 +112,28 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
-/* Update marquee animation for seamless infinite scrolling */
-/* @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
 }
 
-
-.group:hover .marquee {
-  animation-play-state: paused;
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
 }
 
-.marquee {
-  animation: marquee var(--duration) linear infinite;
-} */
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
 
 .container {
   max-width: 1280px;
