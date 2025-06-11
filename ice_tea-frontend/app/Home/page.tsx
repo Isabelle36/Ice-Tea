@@ -10,10 +10,10 @@ import { AvatarGroup } from "@/components/modern-ui/avatar-group";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import FooterThird from "@/components/serenity-ui/Footer";
 import Link from "next/link";
-
-import Lenis from "lenis";
-import { useEffect,useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef,useState,useEffect } from "react";
 import Image from "next/image";
+import Lenis from "lenis";
 
 const Home = () => {
   const cards = [
@@ -136,7 +136,7 @@ const Home = () => {
     },
   ];
 
-  const [lenisRef, setLenis] = useState<Lenis | null>(null);
+   const [lenisRef, setLenis] = useState<Lenis | null>(null);
   const [rafState, setRaf] = useState<number | null>(null);
 
   useEffect(() => {
@@ -160,110 +160,130 @@ const Home = () => {
     };
   }, []);
 
+  const fadeSectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: fadeSectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7], [1, 1, 0.35]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.7], [1, 1, 0.92]);
 
   return (
     <div className="relative flex bg-[#110921] flex-col min-h-screen overflow-x-hidden font-[family-name:var(--font-bricolage-grotesque)]">
       <div className="sm:w-[150px] sm:h-[150px] sm:mt-[25%] sm:ml-[-10%] md:w-[300px] md:h-[300px]  blur-[50px] bg-[#1a304bc5] absolute left-[-10%]  md:mt-[12%] rotate-45 z-0"></div>
       <div className="sm:w-[260px] sm:h-[260px]  md:w-[200px] md:h-[200px] sm:mt-[130%] md:mt-[109%] lg:mt-[39%]  blur-[50px]  bg-[#2D0A44] absolute sm:right-[-42%] md:right-[-7%]  rounded-full rotate-[-30deg] z-0"></div>
-      <div className="relative sm:flex sm:justify-center">
-        <div className="sm:mt-[100%] sm:mx-auto md:ml-[52%] lg:ml-[59%] md:mt-[24%] z-10 lg:mt-[10%]">
-          <CardStack items={cards} />
-        </div>
-      </div>
-      <div className="z-10 sm:ml-[12%] sm:mt-[-135%] md:mt-[-26%] lg:mt-[-10%] md:ml-[5%] lg:ml-[7%] space-y-2">
-        <h1
-          data-trig="fade-in"
-          className="  sm:text-5xl md:text-5xl lg:text-7xl text-white"
-        >
-          Code in Style
-        </h1>
-        <h2 className="sm:text-xl  md:text-xl lg:text-3xl text-white/80 ">
-          <span className="text-purple-400 ">Anime</span>-Inspired Themes That
-          <br></br> Bring Your Editor to Life!
-        </h2>
-
-        <div className="sm:flex-row sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
-          <Link href="https://github.com/isabelle36" target="_blank">
-            <button className="group sm:p-2 sm:pl-3 sm:pr-3 md:p-1 md:pl-1.5 md:pr-1  lg:p-1.5 lg:pl-3 lg:pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
-              <span className="text-white font-sm ">VsCode Extension</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide text-purple-400 group-hover:text-cyan-300 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300  my-auto lucide-zap-icon inline-flex lucide-zap"
-              >
-                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-              </svg>
-            </button>
-          </Link>
-
-          <Link href="/review">
-            <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
-              <span className="text-white font-sm">Leave a Review</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide sm:translate-x-4 md:translate-x-0
-               text-white md:group-hover:translate-x-1 sm:group-hover:translate-x-5 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </button>
-          </Link>
-        </div>
-        <div className="mt-[16%] sm:ml-[-10%] md:ml-0 md:mt-[2%] flex space-x-3">
-          <AvatarGroup limit={5}>
-            <Avatar>
-              <AvatarImage src="/Images/hotplate.jpg" alt="hot" />
-              <AvatarFallback>HOT</AvatarFallback>
-            </Avatar>
-            <Avatar>
-              <AvatarImage src="/Images/iddu.jpg" alt="iddu" />
-              <AvatarFallback>ID</AvatarFallback>
-            </Avatar>
-            <Avatar>
-              <AvatarImage src="/Images/inumaki.jpg" alt="inu" />
-              <AvatarFallback>IN</AvatarFallback>
-            </Avatar>
-            <Avatar>
-              <AvatarImage src="/Images/jinx.jpg" alt="jin" />
-              <AvatarFallback>JI</AvatarFallback>
-            </Avatar>
-            <Avatar>
-              <AvatarImage src="/Images/itadori.jpg" alt="ita" />
-              <AvatarFallback>IT</AvatarFallback>
-            </Avatar>
-          </AvatarGroup>
-          <div className="flex items-center sm:ml-1.5 md:ml-3">
-            <span className="sm:text-[15px] md:text-[16px] text-white/70">
-              Used by
-              <span className="font-bold text-white pl-1 pr-1"> 100+ </span>
-              developers
-            </span>
+      <motion.div
+        ref={fadeSectionRef}
+        style={{
+          opacity,
+          scale,
+          transformOrigin: "top center",
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <div className="relative sm:flex sm:justify-center">
+          <div className="sm:mt-[100%] sm:mx-auto md:ml-[52%] lg:ml-[59%] md:mt-[24%] z-10 lg:mt-[10%]">
+            <CardStack items={cards} />
           </div>
         </div>
-      </div>
-      {/* Testimonials Section */}
-      <h2 className="text-white font-bold text-center px-2 sm:mt-80 md:mt-[321px] text-2xl sm:text-3xl md:text-4xl">
+        <div className="z-10 sm:ml-[12%] sm:mt-[-135%] md:mt-[-26%] lg:mt-[-10%] md:ml-[5%] lg:ml-[7%] space-y-2">
+          <h1 className="  sm:text-5xl md:text-5xl lg:text-7xl text-white">
+            Code in Style
+          </h1>
+          <h2 className="sm:text-xl  md:text-xl lg:text-3xl text-white/80 ">
+            <span className="text-purple-400 ">Anime</span>-Inspired Themes That
+            <br></br> Bring Your Editor to Life!
+          </h2>
+
+          <div className="sm:flex-row sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
+            <Link href="https://github.com/isabelle36" target="_blank">
+              <button className="group sm:p-2 sm:pl-3 sm:pr-3 md:p-1 md:pl-1.5 md:pr-1  lg:p-1.5 lg:pl-3 lg:pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
+                <span className="text-white font-sm ">VsCode Extension</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide text-purple-400 group-hover:text-cyan-300 group-hover:rotate-12 group-hover:scale-125 transition-all duration-300  my-auto lucide-zap-icon inline-flex lucide-zap"
+                >
+                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                </svg>
+              </button>
+            </Link>
+
+            <Link href="/review">
+              <button className="group sm:p-2 sm:pl-3 sm:pr-7  lg:p-1.5 lg:pl-3 lg:pr-3 md:p-1 md:pl-1.5 md:pr-1 flex gap-3 justify-center shadow-md cursor-pointer hover:bg-purple-500/85 rounded-md bg-purple-500/80 transition-all duration-300">
+                <span className="text-white font-sm">Leave a Review</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide sm:translate-x-4 md:translate-x-0
+               text-white md:group-hover:translate-x-1 sm:group-hover:translate-x-5 transition-all duration-300 my-auto inline-flex lucide-move-right-icon lucide-move-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+          <div className="mt-[16%] sm:ml-[-10%] md:ml-0 md:mt-[2%] flex space-x-3">
+            <AvatarGroup limit={5}>
+              <Avatar>
+                <AvatarImage src="/Images/hotplate.jpg" alt="hot" />
+                <AvatarFallback>HOT</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/Images/iddu.jpg" alt="iddu" />
+                <AvatarFallback>ID</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/Images/inumaki.jpg" alt="inu" />
+                <AvatarFallback>IN</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/Images/jinx.jpg" alt="jin" />
+                <AvatarFallback>JI</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/Images/itadori.jpg" alt="ita" />
+                <AvatarFallback>IT</AvatarFallback>
+              </Avatar>
+            </AvatarGroup>
+            <div className="flex items-center sm:ml-1.5 md:ml-3">
+              <span className="sm:text-[15px] md:text-[16px] text-white/70">
+                Used by
+                <span className="font-bold text-white pl-1 pr-1"> 100+ </span>
+                developers
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-white font-bold text-center px-2 sm:mt-80 md:mt-[321px] text-2xl sm:text-3xl md:text-4xl"
+      >
         <span>
           What the <span className="text-cyan-300">Otaku Coders</span>
           <span className="block sm:inline"> Are Raving About Us</span>
         </span>
-      </h2>
+      </motion.h2>
       <span className="sm:text-sm md:text-2xl flex text-white mt-3 justify-center text-center px-2">
         Themes With <span className="ml-1 mr-1 text-purple-400">Vibes</span>
       </span>
