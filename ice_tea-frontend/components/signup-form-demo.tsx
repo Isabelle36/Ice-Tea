@@ -34,20 +34,17 @@ export default function SignupFormDemo() {
 
       if (data.success) {
         setToastState("success");
-        // console.log("Form submitted successfully:", data);
         (event.target as HTMLFormElement).reset();
         setTimeout(() => setToastState("initial"), 2000);
       } else {
         setToastState("error");
         setErrorMsg(data.message || "Something went wrong. Please try again.");
         setTimeout(() => setToastState("initial"), 2500);
-        // console.log("something went wrong", data);
       }
-    } catch (error) {
+    } catch {
       setToastState("error");
       setErrorMsg("Server error. Please try again later.");
       setTimeout(() => setToastState("initial"), 2500);
-      // console.log("Error submitting form:", error);
     }
   };
   return (

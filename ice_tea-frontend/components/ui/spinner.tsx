@@ -97,7 +97,7 @@ interface DotsProps extends SpinnerProps {
   variant?: "v1" | "v2" | "v3" | "v4" | "v5"
 }
 
-export const Dots = ({ variant = "v1", ...props }: DotsProps) => {
+export const Dots = ({ variant = "v1" }: DotsProps) => {
   switch (variant) {
     case "v1":
       return <Dots_v1 />
