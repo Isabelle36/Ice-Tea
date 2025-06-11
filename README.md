@@ -31,8 +31,5 @@ No additional settings required. Just install and enjoy!
 ## Contributing
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-[MIT](LICENSE)
-
 ## Repository
 [GitHub - Isabelle36/Ice-Tea](https://github.com/Isabelle36/Ice-Tea)
