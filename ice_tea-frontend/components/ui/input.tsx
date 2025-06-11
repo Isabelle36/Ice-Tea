@@ -11,7 +11,8 @@ const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLI
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
+    function handleMouseMove(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        const { currentTarget, clientX, clientY } = event;
       const { left, top } = currentTarget.getBoundingClientRect();
 
       mouseX.set(clientX - left);
