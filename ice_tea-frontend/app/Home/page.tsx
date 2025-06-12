@@ -188,7 +188,7 @@ const Home = () => {
           </h2>
 
           <div className="sm:flex-row sm:mt-5 sm:ml-[13%] sm:justify-center md:inline-flex mt-[2%] md:ml-0 space-x-6">
-            <Link href="https://github.com/isabelle36" target="_blank">
+            <Link href="https://marketplace.visualstudio.com/items?itemName=AlfiNikhat.iced-tea" target="_blank">
               <button className="group sm:p-2 sm:pl-3 sm:pr-3 md:p-1 md:pl-1.5 md:pr-1  lg:p-1.5 lg:pl-3 lg:pr-3 flex gap-3 justify-center shadow-xs cursor-pointer hover:border-white/15 hover:bg-white/7 rounded-md bg-white/5 border border-white/10">
                 <span className="text-white font-sm ">VsCode Extension</span>
                 <svg

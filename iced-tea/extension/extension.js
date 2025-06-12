@@ -18,7 +18,7 @@ async function reviewPrompt(context) {
     context.globalState.update('lastReviewPrompt', now);
     if (selection === "Leave a review") {
         context.globalState.update('lastReviewAccepted', true);
-        vscode.env.openExternal(vscode.Uri.parse("https://github.com/Isabelle36/Ice-Tea"));
+        vscode.env.openExternal(vscode.Uri.parse("https://marketplace.visualstudio.com/items?itemName=AlfiNikhat.iced-tea"));
     } else {
         context.globalState.update('lastReviewAccepted', false);
     }
