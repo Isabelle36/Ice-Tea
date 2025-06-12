@@ -17,7 +17,7 @@ Ice-Tea is a Visual Studio Code color theme extension that brings your favorite 
 - Easy to switch between themes from the VS Code theme picker.
 
 ## Getting Started
-1. **Install** this extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/) or by using the `.vsix` file.
+1. **Install** this extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlfiNikhat.iced-tea) or by using the `.vsix` file.
 2. **Activate** the theme:
    - Open the Command Palette (`Ctrl+K Ctrl+T`)
    - Select your favorite "IceTea" theme from the list
