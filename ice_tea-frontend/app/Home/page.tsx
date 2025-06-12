@@ -82,7 +82,7 @@ const Home = () => {
   const testimonials = [
     {
       author: {
-        name: "viraj ved",
+        name: "vraj ved",
         handle: "",
         avatar: "/Images/hotplate.jpg",
       },
