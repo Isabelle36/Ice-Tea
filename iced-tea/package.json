@@ -2,7 +2,7 @@
   "name": "iced-tea",
   "displayName": "Ice-Tea",
   "description": "A vs code color theme that provides anime themes for a unique coding experience.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "AlfiNikhat",
   "main": "extension/extension.js",
   "activationEvents": [

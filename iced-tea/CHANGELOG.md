@@ -16,3 +16,9 @@ Formatted the code
 # Updated
 
 Changed some colors in Sakura My love theme
+
+[1.2.0] - 2025-06-12
+
+# Added
+
+Added a readme file
