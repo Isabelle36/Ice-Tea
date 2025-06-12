@@ -22,3 +22,9 @@ Changed some colors in Sakura My love theme
 # Added
 
 Added a readme file
+
+[1.3.0] - 2025-06-12
+
+# Updated
+
+updated the review link
