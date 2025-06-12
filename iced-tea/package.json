@@ -3,7 +3,7 @@
   "displayName": "Ice-Tea",
   "description": "A vs code color theme that provides anime themes for a unique coding experience.",
   "version": "1.1.0",
-  "publisher": "Alfi Nikhat",
+  "publisher": "AlfiNikhat",
   "main": "extension/extension.js",
   "activationEvents": [
     "onStartupFinished"
@@ -36,8 +36,8 @@
   "categories": [
     "Themes"
   ],
-   "icon": "Tea/Icon/icetea-logo.jpg",
-   "repository": {
+  "icon": "Tea/Icon/icetea-logo.jpg",
+  "repository": {
     "type": "git",
     "url": "https://github.com/Isabelle36/Ice-Tea"
   },
